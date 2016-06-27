@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <databases>
+        <database id="Gome.MysqlSample">
+            <sqls>
+                <sql id="query_app">
+                    select apitest.value from apitest where apitest.key='${app_id}'
+                </sql>
+                <sql id="query_test">
+                    select apitest.value from apitest where apitest.key = '${vDB}'
+                </sql>
+                <sql id="update_test">
+                    update apitest set apitest.value = '1' where apitest.key = '${vDB}'
+                </sql>
+                <sql id="change_step">
+                    update apitest set apitest.value = 'runningTest' where apitest.key = 'teststep'
+                </sql>
+                <sql id="revert_step">
+                    update apitest set apitest.value = 'beforeTest' where apitest.key = 'teststep'
+                </sql>
+            </sqls>
+        </database>
+    </databases>
+</configuration>
